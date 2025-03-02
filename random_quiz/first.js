@@ -70,7 +70,7 @@ const quizQuestions = [
     } 
     
     for(let i=0;i<input;i++){
-        const j = Generate_randomNO(input);
+        const j = Generate_randomNO(quizQuestions.length);
         
         let quesbox = document.createElement("div");
         quesbox.classList.add('ques')
@@ -78,28 +78,53 @@ const quizQuestions = [
         form.appendChild(quesbox);
 
         let ul = document.createElement('ul');
-        for(let i=0;i<4;i++){
+        for(let k=0;k<4;k++){
             let li = document.createElement('li');
             let opt = document.createElement('input'); 
             opt.classList.add('option')
             opt.type='radio'
-            opt.name='opt'+j;
+            opt.name='opt'+i;
+            opt.value = quizQuestions[j].options[k];
             li.appendChild(opt)
-            li.appendChild(document.createTextNode(quizQuestions[j].options[i]))
+            li.appendChild(document.createTextNode(quizQuestions[j].options[k]))
             ul.appendChild(li);
         }
         form.appendChild(ul) 
     }
   })
 
-  let score=0;
-  let submit_btn = document.getElementById('Submit_btn')
-  form.addEventListener('submit',(e)=>{
-    e.preventDefault();
-    let data = new FormData(form)
-    console.log(data)
-    for(let [key,val] of data.keys()){
-     if()
+  function check(val){
+    for(let i=0;i<quizQuestions.length;i++){
+      if(val === quizQuestions[i].correctAnswer) return true;
     }
-  })
+    return false;
+  }
+
+  form.addEventListener('submit', (e) => {
+    // console.log(e.target);
+    e.preventDefault();
+    score = 0;  
+    let data = new FormData(form)
+
+    // for(let a of Array.from(data.values())){
+    //   console.log(a)
+    // }
+
+    // for(let a of data.entries()){  //data.entries return itself a array of key,value
+    //   console.log(a);  // a denoting to 1 complete entry means 1 array of pair [key,value]
+    // }
+
+    //to get one , we destructure the array 
+    for(let [key,val] of data.entries()){
+        if(check(val)) score++;
+    }
+// rather than checking for match the answer , we can store the ans of ques that we are selecting , ques ko phale hi set me store kra lenge toh unquie ques bhe ayenge
+
+    let result = document.createElement('div')
+    result.classList.add('result');
+    result.textContent=score;
+    form.appendChild(result)
+    }
+    
+  );
   
