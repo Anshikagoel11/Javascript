@@ -1,0 +1,93 @@
+/* Container */
+#box {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Button */
+#inputbox {
+    background-color: #fff3e0;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 70%;
+    font-size: 1rem;
+    color: #5c5757;
+}
+
+#btn {
+    background-color: #ffab91;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #ff8a65;
+}
+
+/* Header */
+.head {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Task list */
+.tasklist {
+    list-style-type: none;
+    padding: 15px;
+    background-color: #ffe0b2;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #5c5757;
+}
+
+/* Check and Done buttons */
+.check {
+    height: 20px;
+    width: 20px;
+    background-color: #81c784;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.done {
+    height: 20px;
+    width: 20px;
+    background-color: #e57373;
+    border-radius: 50%;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+/* Task list background */
+.list {
+    background: #fce4ec;
+    padding: 15px;
+    border-radius: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Completed task */
+.unchecked {
+    text-decoration: line-through;
+    color: #a1887f;
+    opacity: 0.7;
+}

@@ -1,0 +1,20 @@
+#box{
+    height: 50vh;
+    width: 50vw;
+    background-color: rgb(125, 148, 125);
+    margin: 20px;
+    align-content: center;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 4px black solid;
+}
+
+#btn{
+    background-color: rgb(84, 83, 83);
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+}
